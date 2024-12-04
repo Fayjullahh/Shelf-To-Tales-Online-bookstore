@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Owner Dashboard</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 {
+            color: #fff;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #111;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar a {
+            padding: 15px;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #222;
+        }
+
+        /* Content */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+            flex-grow: 1;
+        }
+
+        .dashboard-section {
+            margin-bottom: 30px;
+        }
+
+        .dashboard-section h2 {
+            margin-bottom: 15px;
+            border-bottom: 2px solid #fff;
+            display: inline-block;
+        }
+
+        /* Buttons */
+        .button {
+            padding: 10px 15px;
+            border: 1px solid #fff;
+            background: none;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #222;
+            transform: scale(1.05);
+        }
+
+        /* Table */
+        .dashboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-table th, .dashboard-table td {
+            border: 1px solid #fff;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .dashboard-table th {
+            background-color: #333;
+        }
+
+        /* Graph Section */
+        .graph {
+            background-color: #222;
+            height: 300px;
+            border-radius: 8px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="#">Dashboard</a>
+        <a href="#">Reader List</a>
+        <a href="#">Reports</a>
+        <a href="#">Notifications</a>
+        <a href="#">Settings</a>
+    </div>
+
+    <div class="content">
+        <h1>Shop Owner Dashboard</h1>
+
+        <!-- Reader List Section -->
+        <div class="dashboard-section">
+            <h2>Reader List</h2>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Reader Name</th>
+                        <th>Activity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Borrowed</td>
+                        <td>
+                            <button class="button">Text</button>
+                            <button class="button">Send Reminder</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>Bought</td>
+                        <td><button class="button">Offer Discount</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Graph Section -->
+        <div class="dashboard-section">
+            <h2>Reader Interest Graph</h2>
+            <div class="graph">
+                <!-- Placeholder for graph -->
+            </div>
+        </div>
+
+        <!-- Reader Requests -->
+        <div class="dashboard-section">
+            <h2>Pending Requests</h2>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Reader Name</th>
+                        <th>Request Type</th>
+                        <th>Statistics</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Exchange</td>
+                        <td>Returned: Yes</td>
+                        <td>
+                            <button class="button">Approve</button>
+                            <button class="button">Mark Collected</button>
+                            <button class="button">Report</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Top Buyers -->
+        <div class="dashboard-section">
+            <h2>Top Buyers</h2>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Reader Name</th>
+                        <th>Total Purchases</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>15 Books</td>
+                        <td><button class="button">Offer Discount</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

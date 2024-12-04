@@ -66,3 +66,82 @@
     /* background-size: cover;
     background-position: center; */
     /* background-color: rgba(98,171,0,0.5); */
+
+    .books-section {
+        background-color: #121212; /* Dark background */
+        color: #ffffff; /* Text color */
+        padding: 20px;
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Box shadow for depth */
+        margin: 20px auto;
+        max-width: 90%;
+    }
+    
+    .books-section h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #f3722c; /* Accent color for the heading */
+    }
+    
+    .book-cards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .book-card {
+        background-color: #1e1e1e; /* Slightly lighter dark */
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        width: 30%; /* Responsive size */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Card shadow */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation on hover */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .book-card:hover {
+        transform: translateY(-5px); /* Subtle lift effect */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+    }
+    
+    .card-icon {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        animation: bounce 2s infinite; /* Bounce effect for icons */
+    }
+    
+    .card-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        color: #f9c74f; /* Goldish accent for titles */
+    }
+    
+    .card-content p {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    
+    /* Keyframes for icon bounce animation */
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    /* Media Query for Responsive Layout */
+    @media (max-width: 768px) {
+        .book-card {
+            width: 100%; /* Full width on small screens */
+        }
+    }
